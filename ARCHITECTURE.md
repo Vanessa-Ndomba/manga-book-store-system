@@ -21,3 +21,6 @@ The system will implement the core functionality required for a basic online man
 
 ## L2 Container Diagram
 ![L2_Container Diagram](./L2_Container_Diagram.png)
+
+## L3 Component Diagram
+![L3_Component Diagram](./L3_Component_Diagram.png)
