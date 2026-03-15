@@ -15,4 +15,4 @@ The system will implement the core functionality required for a basic online man
 ---
 
 # C4 Architectural Diagrams
-L1_System_Context Diagram.png
+
