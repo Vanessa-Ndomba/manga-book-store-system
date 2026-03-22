@@ -245,10 +245,3 @@ This System Requirements Document (SRD) defines the functional and non-functiona
 4. Third-party payment gateway API access (simulated)
 
 ---
-
-## Document Version Control
-- **Version:** 1.0
-- **Date:** March 22, 2026
-- **Author:** Requirements Engineering Team
-- **Last Updated:** March 22, 2026
-- **Status:** Approved
