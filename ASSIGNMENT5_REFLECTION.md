@@ -307,5 +307,3 @@ This assignment reinforced that requirements engineering is a refinement process
 The most valuable outcome is not just the artifacts produced, but the deeper understanding of the system these artifacts create for the entire team.
 
 ---
-
-## Word Count: ~650 words
