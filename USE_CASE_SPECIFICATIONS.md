@@ -47,3 +47,4 @@
 **Postconditions:** User is logged out.
 **Basic Flow:** 1. User clicks the "Logout" button. 2. System logs the user out and redirects to the login page.
 **Alternative Flows:** 1. Session timeout occurs. (User is redirected to the login page automatically.)
+
