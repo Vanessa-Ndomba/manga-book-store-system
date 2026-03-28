@@ -1,4 +1,4 @@
-# Assignment 5: Reflection on Use Case Modeling and Test Case Development
+# Reflection on Use Case Modeling and Test Case Development
 
 ## Executive Summary
 
