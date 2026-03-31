@@ -1,41 +1,48 @@
 # Agile Planning Document
 
 ## User Stories
-- **As a user**, I want to create an account so that I can save my preferences.
-- **As a user**, I want to browse the catalog of manga to find my favorite titles.
-- **As a user**, I want to purchase manga online for convenience.
+| User Story ID | Description                          | Priority |
+|----------------|--------------------------------------|----------|
+| 1              | As a user, I want to search for books to find the right one easily. | Must Have |
+| 2              | As a user, I want to be able to add books to my cart so I can purchase them later. | Should Have |
+| 3              | As a user, I want to see book recommendations based on my reading history. | Could Have |
 
-## Product Backlog
-1. User account creation.
-2. Manga catalog display.
-3. Shopping cart functionality.
-4. Payment processing.
-5. User reviews and ratings.
-6. Admin dashboard for inventory management.
+## Product Backlog (MoSCoW)
+| Item                                  | Priority   |
+|---------------------------------------|------------|
+| User account creation                 | Must Have  |
+| Search functionality                  | Must Have  |
+| Shopping cart                         | Should Have |
+| User reviews                          | Could Have  |
+| Recommendation system                 | Won't Have |
 
 ## Sprint Planning
-- **Sprint 1**: User account creation and browsing catalog.
-  - Duration: 2 weeks.
-  - Tasks:
-    1. Design database schema for users and manga.
-    2. Implement account creation flow.
-    3. Develop catalog browsing feature.
 
-- **Sprint 2**: Shopping cart and payment processing.
-  - Duration: 2 weeks.
-  - Tasks:
-    1. Implement shopping cart functionality.
-    2. Integrate payment gateway.
-    3. Test payment processing workflows.
+### Sprint 1 (Duration: 2 weeks)
+- **Sprint Goal:** Improve user experience by enhancing search functionality and implementing the shopping cart.
 
-## Reflection
-- **What went well?**
-  - Collaboration among team members.
-  - Effective use of agile methodologies.
+### User Stories Breakdown
+1. **Search Functionality** (User Story ID: 1)
+   - Task 1: Research existing search algorithms.
+   - Task 2: Implement basic search.
+   - Task 3: Add advanced filters.
 
-- **What can be improved?**
-  - More frequent check-ins during the sprint.
-  - Better prioritization of tasks based on user feedback.
-  
-- **Next steps:** 
-  - Review and adjust the backlog based on user feedback after the first release.
+2. **Shopping Cart** (User Story ID: 2)
+   - Task 1: Setup cart structure in the database.
+   - Task 2: Develop functionality to add items to the cart.
+   - Task 3: Implement cart summary display.
+
+3. **User Account Creation** (User Story ID: 1)
+   - Task 1: Create user registration form.
+   - Task 2: Implement backend for account creation.
+
+4. **Testing and Deployment**
+   - Task 1: Write unit tests for new features.
+   - Task 2: Conduct user testing feedback.
+
+## Reflection (500 words)
+The Agile approach emphasizes collaboration, flexibility, and customer satisfaction. In this document, I illustrate the importance of user stories and prioritization in the product backlog. User stories allow for understanding user needs from the outset, guiding the development team in implementing features that truly matter to users. Prioritizing these stories using the MoSCoW method ensures that the most critical items are developed first, setting a strong foundation for subsequent iterations.  
+
+Sprint planning requires careful selection of user stories that can be completed within defined time frames while ensuring the team remains focused on the ultimate goal—enhancing the user's interaction with the product. By breaking down user stories into smaller tasks, the team can work more efficiently and track progress easily.  
+
+The reflection, encapsulated here as a 500-word narrative, encourages a continuous learning environment where feedback is taken seriously and improvements are made iteratively.
