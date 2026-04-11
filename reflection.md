@@ -1,4 +1,4 @@
-# Assignment 7 - Reflection on GitHub Project Templates and Kanban Board Implementation
+# Reflection on GitHub Project Templates and Kanban Board Implementation
 
 ## Overview
 This reflection document captures the challenges, learnings, and best practices discovered while implementing Assignment 7.
