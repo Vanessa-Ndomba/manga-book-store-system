@@ -1,4 +1,4 @@
-# Kanban Board Explanation & Our Custom Implementation
+# Kanban Board Explanation and Our Custom Implementation
 
 ## What is a Kanban Board?
 
