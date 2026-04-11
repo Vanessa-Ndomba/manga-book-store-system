@@ -12,6 +12,7 @@ This reflection document captures the challenges, learnings, and best practices 
 
 **Learning**: For development teams, prioritize templates with native automation (PR linking, issue status updates) over manual templates.
 
+
 ### Challenge 2: Customization vs. Simplicity
 **Problem**: Temptation to add many columns (Testing, Blocked, Staging, Review, etc.) conflicted with Kanban's principle of simplicity.
 
@@ -19,12 +20,14 @@ This reflection document captures the challenges, learnings, and best practices 
 
 **Learning**: Every column should have a clear purpose. Excess columns dilute Kanban's effectiveness.
 
+
 ### Challenge 3: Work-In-Progress (WIP) Limits
 **Problem**: Determining optimal WIP limits for each column without real team data.
 
 **Solution**: Applied industry standards (2-5 items per column) and planned to iterate based on sprint metrics.
 
 **Learning**: WIP limits are not static; they should be adjusted based on team capacity and bottleneck analysis.
+
 
 ### Challenge 4: Integrating with GitHub Workflows
 **Problem**: Understanding how to link issues, PRs, and ensure automation triggers correctly.
