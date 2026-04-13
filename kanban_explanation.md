@@ -11,7 +11,7 @@ A **Kanban board** is a visual workflow management tool that uses columns (repre
 4. **Make Policies Explicit** - Clear rules for moving cards
 5. **Implement Feedback Loops** - Continuous improvement through metrics
 
-## Our Custom Kanban Board Structure
+## Custom Kanban Board Structure
 
 ### Column Workflow
 To Do → In Progress → Testing → In Review → Blocked → Done
