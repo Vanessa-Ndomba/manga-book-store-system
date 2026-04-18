@@ -24,7 +24,7 @@ System Architecture:
   - [docs/assignment-8/state-diagrams.md](docs/assignment-8/state-diagrams.md)
   - [docs/assignment-8/activity-diagrams.md](docs/assignment-8/activity-diagrams.md)
   - [docs/assignment-8/traceability.md](docs/assignment-8/traceability.md)
-  - [docs/assignment-8/xxxxx_reflection.md](docs/assignment-8/xxxxx_reflection.md)
+  - [docs/assignment-8/vanessa_ndomba_reflection.md](docs/assignment-8/vanessa_ndomba_reflection.md)
 - State transition diagrams (8):
   - [docs/assignment8/state-diagrams/user-account-state.md](docs/assignment8/state-diagrams/user-account-state.md)
   - [docs/assignment8/state-diagrams/user-session-state.md](docs/assignment8/state-diagrams/user-session-state.md)

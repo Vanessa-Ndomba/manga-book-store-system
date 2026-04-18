@@ -9,6 +9,7 @@ This file maps Assignment 8 diagrams to:
 ## Assignment 6 Sprint Task Key
 
 Because Assignment 6 sprint tasks are listed without IDs, this mapping uses the following consistent identifiers:
+These AP6 task IDs are introduced in Assignment 8 only for traceability clarity and do not exist as literal IDs in the original Assignment 6 file.
 
 - **AP6-T01**: Research existing search algorithms  
 - **AP6-T02**: Implement basic search  
