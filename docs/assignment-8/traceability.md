@@ -19,7 +19,7 @@ Because Assignment 6 sprint tasks are listed without IDs, this mapping uses the 
 - **AP6-T07**: Create user registration form  
 - **AP6-T08**: Implement backend for account creation  
 - **AP6-T09**: Write unit tests for new features  
-- **AP6-T10**: Conduct user testing feedback
+- **AP6-T10**: Conduct user testing and gather feedback
 
 ---
 
