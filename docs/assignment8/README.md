@@ -1,4 +1,4 @@
-# Assignment 8: Object State Modeling and Activity Workflow Modeling
+# Object State Modeling and Activity Workflow Modeling
 
 ## State Transition Diagrams (Mermaid)
 1. [User Account State Diagram](state-diagrams/user-account-state.md)
