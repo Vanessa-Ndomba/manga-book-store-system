@@ -42,3 +42,7 @@ System Architecture:
   - [docs/assignment8/explanations/activity-diagrams-explanations.md](docs/assignment8/explanations/activity-diagrams-explanations.md)
   - [docs/assignment8/explanations/traceability-matrix.md](docs/assignment8/explanations/traceability-matrix.md)
   - [docs/assignment8/explanations/assignment8_reflection.md](docs/assignment8/explanations/assignment8_reflection.md)
+
+## Assignment 8
+
+- [Assignment 8 Deliverables (Object State + Activity Workflow Modeling)](docs/assignment-8/README.md)
