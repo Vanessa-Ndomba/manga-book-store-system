@@ -6,7 +6,7 @@ stateDiagram-v2
     InStock --> Reserved: Reserve quantity [requestedQty <= availableQty]
     Reserved --> InStock: Reservation released
     Reserved --> Allocated: Confirm order
-    Allocated --> InStock: Restock return [itemCondition == sellable]
+    Allocated --> InStock: Restock return [isSellable]
     InStock --> LowStock: Quantity drop [availableQty <= reorderPoint]
     LowStock --> OutOfStock: Sell final unit [availableQty == 0]
     OutOfStock --> ReplenishmentPending: Raise purchase request

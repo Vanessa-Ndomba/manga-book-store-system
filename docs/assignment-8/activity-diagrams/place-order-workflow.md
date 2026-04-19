@@ -15,7 +15,10 @@ flowchart TD
       S3[Create shipment request]
       S4[Generate confirmation payload]
       J1{{Join}}
+      D1{Inventory update successful?}
+      D2{Shipment request successful?}
       S5[Persist order timeline event]
+      S6[Trigger compensation and flag order for review]
     end
 
     subgraph Inventory_DB[Inventory DB]
@@ -30,10 +33,14 @@ flowchart TD
     F1 --> S2 --> I1 --> J1
     F1 --> S3 --> J1
     F1 --> S4 --> E1 --> J1
-    J1 --> S5 --> End([End])
+    J1 --> D1
+    D1 -- No --> S6 --> End([End])
+    D1 -- Yes --> D2
+    D2 -- No --> S6 --> End
+    D2 -- Yes --> S5 --> End
 ```
 
 ## Explanation
 - **Stakeholder concerns:** Customers need quick confirmations; operations need inventory/shipping updates without manual delay.
-- **Decisions/parallelism:** This workflow emphasizes parallel post-order tasks (inventory update, shipment creation, and email) for speed and consistency.
+- **Decisions/parallelism:** Parallel post-order tasks (inventory update, shipment creation, and email) improve speed, while post-join decisions add consistency checks and compensation on failure.
 - **Use case and placeholder mapping:** Place Order, Send Confirmation Email, Update Inventory; FR-111, FR-119; US-207; ST-207.
