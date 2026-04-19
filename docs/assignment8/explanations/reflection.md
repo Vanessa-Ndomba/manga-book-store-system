@@ -1,4 +1,4 @@
-# Reflection
+# Assignment 8 Reflection
 
 ## 1) Challenge: Choosing the Right Granularity
 The main challenge was balancing completeness and readability. If each exception path is modeled explicitly, diagrams become difficult to scan. I handled this by:
