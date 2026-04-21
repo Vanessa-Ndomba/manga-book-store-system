@@ -1,4 +1,4 @@
-# Assignment 9: Domain Model (MangaBookStore)
+# Domain Model: MangaBookStore
 
 This domain model captures the key business entities, responsibilities, relationships, and rules for the **MangaBookStore – Online Manga Retail System**.
 
