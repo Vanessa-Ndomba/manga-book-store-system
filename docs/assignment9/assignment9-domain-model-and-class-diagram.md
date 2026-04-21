@@ -68,6 +68,3 @@ classDiagram
     Order --|> PaymentTransaction
     MangaListing --|> CartItem
 ```
-
-## Reflection
-[Insert drafted reflection text here; must be 500+ words.]
