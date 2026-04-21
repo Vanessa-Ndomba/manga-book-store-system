@@ -42,3 +42,12 @@ System Architecture:
   - [docs/assignment8/explanations/activity-diagrams-explanations.md](docs/assignment8/explanations/activity-diagrams-explanations.md)
   - [docs/assignment8/explanations/traceability-matrix.md](docs/assignment8/explanations/traceability-matrix.md)
   - [docs/assignment8/explanations/assignment8_reflection.md](docs/assignment8/explanations/assignment8_reflection.md)
+
+## Assignment 9: Domain Modeling and Class Diagram Development
+
+- Domain model:
+  - [docs/assignment-9-domain-model.md](docs/assignment-9-domain-model.md)
+- Class diagram (Mermaid):
+  - [docs/assignment-9-class-diagram.md](docs/assignment-9-class-diagram.md)
+- Reflection:
+  - [docs/assignment-9-reflection.md](docs/assignment-9-reflection.md)
