@@ -12,6 +12,7 @@
 | Order                  | orderID, userID, paymentStatus    | placeOrder()   | belongs to UserAccount |
 | PaymentTransaction     | transactionID, orderID, amount    | processPayment()| belongs to Order      |
 
+
 ### Business Rules
 - A user can have multiple sessions but one active session at a time.
 - A shopping cart can contain multiple items.
