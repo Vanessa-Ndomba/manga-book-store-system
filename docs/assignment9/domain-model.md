@@ -1,0 +1,1 @@
+<content from docs/assignment-9-domain-model.md>
