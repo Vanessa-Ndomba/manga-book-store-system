@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import secrets
 from typing import Dict, Optional
 
@@ -11,9 +12,17 @@ from ..users.customer import RegisteredCustomer
 from ..users.admin import StoreManager, SystemAdmin
 from ..users.supplier import Supplier
 
+# PBKDF2 parameters
+_HASH_ALGO = "sha256"
+_ITERATIONS = 260_000
+_SALT_BYTES = 32
+
 
 class AuthService:
     """Manages user account registration, authentication, and session lifecycle.
+
+    Passwords are stored using PBKDF2-HMAC-SHA256 with a random per-user salt,
+    encoded as ``<hex_salt>$<hex_digest>`` for self-contained verification.
 
     Attributes:
         _users: Mapping of user_id → User object.
@@ -33,28 +42,50 @@ class AuthService:
 
     @staticmethod
     def _hash_password(password: str) -> str:
-        """Return a SHA-256 hex digest of *password*.
+        """Hash *password* using PBKDF2-HMAC-SHA256 with a random salt.
+
+        The returned string has the format ``<hex_salt>$<hex_digest>`` so
+        that both salt and digest are stored together in a single field.
 
         Args:
             password: Plain-text password string.
 
         Returns:
-            Hex-encoded SHA-256 digest.
+            String in ``<hex_salt>$<hex_digest>`` format.
         """
-        return hashlib.sha256(password.encode("utf-8")).hexdigest()
+        salt = os.urandom(_SALT_BYTES)
+        digest = hashlib.pbkdf2_hmac(
+            _HASH_ALGO,
+            password.encode("utf-8"),
+            salt,
+            _ITERATIONS,
+        )
+        return f"{salt.hex()}${digest.hex()}"
 
     @staticmethod
-    def _verify_password(password: str, password_hash: str) -> bool:
-        """Return True if the hash of *password* matches *password_hash*.
+    def _verify_password(password: str, stored_hash: str) -> bool:
+        """Return True if *password* matches the PBKDF2 *stored_hash*.
 
         Args:
             password: Plain-text password to verify.
-            password_hash: Stored hex digest to compare against.
+            stored_hash: Stored ``<hex_salt>$<hex_digest>`` string.
 
         Returns:
-            True when the hashes match.
+            True when the derived digest matches the stored digest.
         """
-        return hashlib.sha256(password.encode("utf-8")).hexdigest() == password_hash
+        try:
+            salt_hex, digest_hex = stored_hash.split("$", 1)
+        except ValueError:
+            return False
+        salt = bytes.fromhex(salt_hex)
+        expected = bytes.fromhex(digest_hex)
+        actual = hashlib.pbkdf2_hmac(
+            _HASH_ALGO,
+            password.encode("utf-8"),
+            salt,
+            _ITERATIONS,
+        )
+        return secrets.compare_digest(actual, expected)
 
     # ------------------------------------------------------------------
     # Account management
@@ -242,7 +273,7 @@ class AuthService:
             raise ValueError("Current password is incorrect.")
         if not new_password:
             raise ValueError("new_password must not be empty.")
-        user._password_hash = self._hash_password(new_password)
+        user._update_password_hash(self._hash_password(new_password))
 
     def deactivate_user(self, user_id: str) -> None:
         """Deactivate a user account.
@@ -273,5 +304,5 @@ class AuthService:
         if not new_password:
             raise ValueError("new_password must not be empty.")
         user = self.get_user(user_id)
-        user._password_hash = self._hash_password(new_password)
+        user._update_password_hash(self._hash_password(new_password))
         return secrets.token_urlsafe(16)

@@ -123,6 +123,21 @@ class User:
         """Hashed password string (read-only via property)."""
         return self._password_hash
 
+    def _update_password_hash(self, new_hash: str) -> None:
+        """Update the stored password hash.
+
+        Intended for use by AuthService only; not part of the public API.
+
+        Args:
+            new_hash: The new password hash string to store.
+
+        Raises:
+            ValueError: If new_hash is empty.
+        """
+        if not new_hash:
+            raise ValueError("new_hash must not be empty.")
+        self._password_hash = new_hash
+
     @property
     def role(self) -> UserRole:
         """Role assigned to this user account."""

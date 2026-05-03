@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Dict
+from typing import Dict, Optional
 
 
 class InventoryRepository(ABC):
@@ -69,7 +69,7 @@ class MockInventoryRepository(InventoryRepository):
         _stock: Mapping of manga_id → available stock quantity.
     """
 
-    def __init__(self, initial_stock: Dict[str, int] | None = None) -> None:
+    def __init__(self, initial_stock: Optional[Dict[str, int]] = None) -> None:
         """Initialise the mock repository.
 
         Args:
