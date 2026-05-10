@@ -1,0 +1,110 @@
+# Assignment 11 – Repository Layer Class Diagram (Mermaid)
+
+> This diagram shows the generic repository interface, entity-specific repositories,
+> in-memory implementations, a factory for switching storage backends, and a stub
+> filesystem repository for future persistence.
+
+```mermaid
+classDiagram
+direction LR
+
+%% -------------------------
+%% Domain Layer (Assignment 10)
+%% -------------------------
+class Manga {
+  +isbn: str
+  +title: str
+  +author: str
+  +genres: list[str]
+  +price: float
+}
+
+class Order {
+  +order_id: str
+  +customer_id: str
+  +shipping_address: str
+  +items: list[OrderItem]
+}
+
+class OrderItem {
+  +isbn: str
+  +title: str
+  +unit_price: float
+  +quantity: int
+}
+
+Order "1" o-- "*" OrderItem : contains
+
+%% -------------------------
+%% Repository Interfaces (Assignment 11)
+%% -------------------------
+class Repository~T, ID~ {
+  <<interface>>
+  +save(entity: T) void
+  +find_by_id(id: ID) Optional~T~
+  +find_all() List~T~
+  +delete(id: ID) void
+}
+
+class MangaRepository {
+  <<interface>>
+}
+
+class OrderRepository {
+  <<interface>>
+}
+
+Repository <|.. MangaRepository
+Repository <|.. OrderRepository
+
+%% -------------------------
+%% In-Memory Implementations (HashMap/Dictionary)
+%% -------------------------
+class InMemoryMangaRepository {
+  -_storage: Dict~str, Manga~
+  +save(entity: Manga) void
+  +find_by_id(id: str) Optional~Manga~
+  +find_all() List~Manga~
+  +delete(id: str) void
+}
+
+class InMemoryOrderRepository {
+  -_storage: Dict~str, Order~
+  +save(entity: Order) void
+  +find_by_id(id: str) Optional~Order~
+  +find_all() List~Order~
+  +delete(id: str) void
+}
+
+MangaRepository <|.. InMemoryMangaRepository
+OrderRepository <|.. InMemoryOrderRepository
+
+InMemoryMangaRepository --> Manga : stores
+InMemoryOrderRepository --> Order : stores
+
+%% -------------------------
+%% Future-Proofing Stub Backend
+%% -------------------------
+class FileSystemMangaRepository {
+  -_file_path: str
+  +save(entity: Manga) void
+  +find_by_id(id: str) Optional~Manga~
+  +find_all() List~Manga~
+  +delete(id: str) void
+}
+
+MangaRepository <|.. FileSystemMangaRepository
+
+%% -------------------------
+%% Storage Abstraction Mechanism (Factory Pattern)
+%% -------------------------
+class RepositoryFactory {
+  +get_manga_repository(storage_type: str) MangaRepository
+  +get_order_repository(storage_type: str) OrderRepository
+}
+
+RepositoryFactory ..> MangaRepository : returns
+RepositoryFactory ..> OrderRepository : returns
+RepositoryFactory ..> InMemoryMangaRepository : MEMORY
+RepositoryFactory ..> InMemoryOrderRepository : MEMORY
+RepositoryFactory ..> FileSystemMangaRepository : FILESYSTEM (stub)
