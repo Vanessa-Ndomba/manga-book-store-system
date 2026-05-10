@@ -87,11 +87,6 @@ This Assignment 10 implementation uses **Python** because it allows rapid, reada
    pytest
    ```
 
-### Optional: HTML Coverage Report
-```powershell
-pytest --cov=src --cov=creational_patterns --cov-report=html
-```
-Open `htmlcov/index.html` to view the report.
 
 
 ## Assignment 11: Implementing a Persistence Repository Layer
