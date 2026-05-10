@@ -92,3 +92,53 @@ This Assignment 10 implementation uses **Python** because it allows rapid, reada
 pytest --cov=src --cov=creational_patterns --cov-report=html
 ```
 Open `htmlcov/index.html` to view the report.
+
+
+## Assignment 11: Implementing a Persistence Repository Layer
+
+### Repository Interface Design
+A generic repository interface was created to standardize CRUD operations across domain entities:
+
+- `repositories/base.py` — `Repository[T, ID]` (generic CRUD contract)
+
+Entity-specific repository interfaces extend the generic repository to keep type-safe, domain-focused contracts:
+
+- `repositories/manga_repository.py` — `MangaRepository` (ID: `isbn: str`)
+- `repositories/order_repository.py` — `OrderRepository` (ID: `order_id: str`)
+
+**Justification:** Generics (`Repository[T, ID]`) avoid duplicated CRUD method definitions across each entity repository while still allowing entity-specific repositories for clarity and future extension.
+
+### In-Memory Implementation (HashMap/Dictionary)
+In-memory repositories implement the interfaces using Python dictionaries (HashMap storage):
+
+- `repositories/inmemory/inmemory_manga_repository.py`
+- `repositories/inmemory/inmemory_order_repository.py`
+
+These repositories support full CRUD:
+- `save` (create/update)
+- `find_by_id` (read one)
+- `find_all` (read all)
+- `delete` (delete by id)
+
+### Storage Abstraction Mechanism (Factory Pattern)
+A repository factory is used to decouple business code from storage details and to allow easy swapping of storage backends:
+
+- `factories/repository_factory.py` — `RepositoryFactory`
+
+**Justification:** The Factory Pattern allows choosing a storage backend (e.g., `MEMORY`, `FILESYSTEM`, `DATABASE`) without changing calling code, keeping persistence concerns isolated.
+
+### Future-Proofing (Stub Backend)
+A stub for a future storage option is included to demonstrate how a new backend can be added without changing the repository interface:
+
+- `repositories/stubs/filesystem_manga_repository.py` — `FileSystemMangaRepository` (stub; raises `NotImplementedError`)
+
+### Tests (CRUD Verification)
+Unit tests validate CRUD behavior for the in-memory repositories:
+
+- `tests/test_inmemory_manga_repository_crud.py`
+- `tests/test_inmemory_order_repository_crud.py`
+
+### How to Run Tests
+```powershell
+pip install -r requirements.txt
+pytest
