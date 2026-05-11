@@ -1,0 +1,22 @@
+flowchart TD
+    Start([Start])
+
+    subgraph User
+        U1[View manga details]
+        U2[Click Add to Cart]
+        U3[Change quantity if needed]
+    end
+
+    subgraph System
+        S1[Check stock availability]
+        S2{Stock available?}
+        S3[Add item to cart]
+        S4[Recalculate cart total]
+        S5[Show out-of-stock message]
+    end
+
+    End([End])
+
+    Start --> U1 --> U2 --> S1 --> S2
+    S2 -- Yes --> S3 --> U3 --> S4 --> End
+    S2 -- No --> S5 --> End
