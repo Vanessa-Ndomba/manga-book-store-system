@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> PendingDispatch
     PendingDispatch --> LabelCreated: Generate shipping label
@@ -14,3 +15,4 @@ stateDiagram-v2
     Delivered --> Closed: Delivery accepted
     Returned --> Closed: Return received at warehouse
     Closed --> [*]
+```
