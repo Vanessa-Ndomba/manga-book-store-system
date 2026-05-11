@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> Empty
     Empty --> Active: Add item [stockAvailable]
@@ -17,3 +18,4 @@ stateDiagram-v2
     Updated --> Empty: Remove all items
     CheckedOut --> ConvertedToOrder: Order ID generated
     ConvertedToOrder --> [*]
+```
