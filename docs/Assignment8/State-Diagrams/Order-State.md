@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> Created
     Created --> PaymentPending: Checkout submitted
@@ -19,3 +20,4 @@ stateDiagram-v2
     Cancelled --> Refunded: Refund issued
     Refunded --> [*]
     Completed --> [*]
+```
