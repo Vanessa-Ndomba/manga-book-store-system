@@ -1,0 +1,28 @@
+flowchart TD
+    Start([Start])
+
+    subgraph Customer
+        C1[Open order history]
+        C2[Select order]
+        C3[Request return]
+        C4[Send item back]
+    end
+
+    subgraph System
+        S1[Check return eligibility]
+        S2{Eligible?}
+        S3[Approve return]
+        S4[Reject return]
+        S5[Inspect returned item]
+        S6{Inspection passed?}
+        S7[Process refund]
+        S8[Close request]
+    end
+
+    End([End])
+
+    Start --> C1 --> C2 --> C3 --> S1 --> S2
+    S2 -- Yes --> S3 --> C4 --> S5 --> S6
+    S6 -- Yes --> S7 --> S8 --> End
+    S6 -- No --> S8 --> End
+    S2 -- No --> S4 --> End
