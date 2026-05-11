@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> Draft
     Draft --> PendingReview: Admin submits listing
@@ -17,3 +18,4 @@ stateDiagram-v2
     LowStock --> Archived: Admin archives listing
     OutOfStock --> Archived: Admin archives listing
     Archived --> [*]
+```
