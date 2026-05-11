@@ -1,0 +1,21 @@
+flowchart TD
+    Start([Start])
+
+    subgraph User
+        U1[Enter email and password]
+        U2[Click login]
+    end
+
+    subgraph System
+        S1[Validate credentials]
+        S2{Credentials correct?}
+        S3[Create user session]
+        S4[Redirect to dashboard]
+        S5[Display login error]
+    end
+
+    End([End])
+
+    Start --> U1 --> U2 --> S1 --> S2
+    S2 -- Yes --> S3 --> S4 --> End
+    S2 -- No --> S5 --> End
