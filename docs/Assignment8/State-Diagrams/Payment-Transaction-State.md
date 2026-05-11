@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> Initiated
     Initiated --> Authorized: Gateway authorization success
@@ -14,3 +15,4 @@ stateDiagram-v2
 
     Voided --> [*]
     Refunded --> [*]
+```
