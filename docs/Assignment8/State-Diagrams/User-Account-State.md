@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> Unregistered
     Unregistered --> Registered: Submit registration [validEmail && strongPassword && uniqueEmail]
@@ -15,3 +16,4 @@ stateDiagram-v2
 
     Active --> Deactivated: User requests account deletion
     Deactivated --> [*]
+```
