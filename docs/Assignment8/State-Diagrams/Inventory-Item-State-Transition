@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> InStock
     InStock --> Reserved: Item added to checkout [stockLocked]
@@ -18,3 +19,4 @@ stateDiagram-v2
     LowStock --> Discontinued: Admin discontinues SKU
     OutOfStock --> Discontinued: Admin discontinues SKU
     Discontinued --> [*]
+```
