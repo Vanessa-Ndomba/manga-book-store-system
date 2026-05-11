@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     [*] --> NoSession
     NoSession --> Authenticated: Login successful [credentialsValid]
@@ -15,3 +16,4 @@ stateDiagram-v2
     IdleSession --> LoggedOut: User logout
     Expired --> NoSession: Re-authenticate
     LoggedOut --> NoSession
+```
