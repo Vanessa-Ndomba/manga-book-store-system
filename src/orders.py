@@ -9,6 +9,7 @@ class OrderStatus(str, Enum):
     PAYMENT_PENDING = "PAYMENT_PENDING"
     CONFIRMED = "CONFIRMED"
     CANCELLED = "CANCELLED"
+    CHECKED_OUT = "CHECKED_OUT"
 
 
 @dataclass

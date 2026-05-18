@@ -1,0 +1,16 @@
+{
+  "order_id": "o1",
+  "customer_id": "u1",
+  "shipping_address": "123 Main St",
+  "items": [
+    {
+      "isbn": "978-100",
+      "title": "Bleach",
+      "unit_price": 10.5,
+      "quantity": 1
+    }
+  ],
+  "status": "OrderStatus.CHECKED_OUT",
+  "payment_transaction_id": null,
+  "total": 10.5
+}
