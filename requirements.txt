@@ -1,5 +1,6 @@
 pytest==8.3.2
 pytest-cov==5.0.0
+httpx
 
 fastapi
 uvicorn
