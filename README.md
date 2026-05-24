@@ -56,7 +56,7 @@ This Assignment 10 implementation uses **Python** because it allows rapid, reada
    ```
 3. Run tests (includes coverage summary via `pytest.ini`):
    ```powershell
-   pytest
+    python -m pytest
    ```
 
 
@@ -109,3 +109,40 @@ Unit tests validate CRUD behavior for the in-memory repositories:
 ```powershell
 pip install -r requirements.txt
 pytest
+
+# MangaBookStore – Online Manga Retail System
+
+## Project Description
+MangaBookStore is an online platform designed for anime and manga fans to browse, search, and purchase manga books. The system allows users to view available manga titles, add items to a shopping cart, and complete purchases securely.
+
+The platform also provides administrative tools for managing manga inventory, tracking customer orders, and maintaining product listings.
+
+This system will demonstrate software engineering principles including system specification, architectural modeling, and modular system design.
+
+## Documentation
+
+System Specification:
+[SPECIFICATION.md](SPECIFICATION.md)
+
+System Architecture:
+[ARCHITECTURE.md](ARCHITECTURE.md)
+
+Branch Protection & CI/CD:
+[PROTECTION.md](PROTECTION.md)
+
+## CI/CD Pipeline Overview
+
+### What is CI/CD?
+**Continuous Integration / Continuous Deployment** automates testing and deployment:
+- **CI** (Continuous Integration): Tests run automatically on every code change
+- **CD** (Continuous Deployment): Validated code is automatically packaged for release
+
+### Why This Matters
+- **Catches bugs early**: Tests run before code reaches `main`
+- **Enforces quality**: Failed tests block PRs from merging
+- **Automates packaging**: Releases are built automatically
+- **Saves time**: No manual testing or deployment needed
+- **Industry standard**: 90% of tech companies use CI/CD
+
+### Pipeline Workflow
+
