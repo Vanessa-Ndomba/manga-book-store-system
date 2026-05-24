@@ -4,3 +4,4 @@ pytest-cov==5.0.0
 fastapi
 uvicorn
 pydantic
+httpx
