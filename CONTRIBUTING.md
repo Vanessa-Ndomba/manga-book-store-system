@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for considering contributing to the Manga Book Store System! 🎉
+Thank you for considering contributing to the Manga Book Store System!
 
 ## Setup Instructions
 1. Prerequisites:
