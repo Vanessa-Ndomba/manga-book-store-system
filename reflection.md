@@ -294,6 +294,18 @@ Documentation sprawl is a known problem. The solution is explicit traceability a
 
 ---
 
+## Local Development & Testing
+
+### Run tests locally
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run tests with coverage
+pytest --cov=. --cov-report=html
+
+# Open htmlcov/index.html in browser to see coverage report
+
 ## Conclusion
 
 The process of translating requirements into use cases and test cases is not mechanical. It requires:
