@@ -105,7 +105,16 @@ Unit tests validate CRUD behavior for the in-memory repositories:
 - `tests/test_inmemory_manga_repository_crud.py`
 - `tests/test_inmemory_order_repository_crud.py`
 
+
 ### How to Run Tests
 ```powershell
 pip install -r requirements.txt
 pytest
+
+# Manga Book Store System
+
+## Getting Started
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Vanessa-Ndomba/manga-book-store-system.git
+   cd manga-book-store-system
