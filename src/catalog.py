@@ -10,7 +10,7 @@ class Manga:
     author: str
     genres: List[str] = field(default_factory=list)
     price: float = 0.0
-     def __post_init__(self):
+    def __post_init__(self):
 
         if self.price < 0:
             raise ValueError(
